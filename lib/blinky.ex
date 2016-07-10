@@ -16,8 +16,8 @@ defmodule Blinky do
   end
 
   defp blink(led_key) do
-    Leds.set [{led_key, true}]
-    :timer.sleep 300
-    Leds.set [{led_key, false}]
+    Leds.set [{led_key, :slowblink}]
+    :timer.sleep 2500
+    Leds.set [{led_key, :heartbeat}]
   end
 end
