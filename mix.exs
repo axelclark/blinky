@@ -21,16 +21,18 @@ defmodule Blinky.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Blinky, []},
-     applications: [:nerves, :logger, :nerves_leds]]
+     applications: [:nerves, :logger, :nerves_leds, :elixir_ale]]
   end
 
   def deps do
-    [{:nerves, "~> 0.3.0"}]
+    [{:nerves, "~> 0.3.0"},
+     {:elixir_ale, "~> 0.5.5"},
+     {:nerves_leds, "~> 0.7.0"},
+   ]
   end
 
   def system(target) do
     [{:"nerves_system_#{target}", ">= 0.0.0"},
-     {:nerves_leds, "~> 0.7.0"},
    ]
   end
 
